@@ -36,7 +36,7 @@ const Menu = () => {
   useEffect(() => {
     const fetchMenuItems = async () => {
       try {
-        const res = await axios.get("/menu");
+        const res = await axios.get("/api/menu");
         const items = res.data;
         console.log("Fetched menu items:", items);
         const uniqueItems = Array.from(

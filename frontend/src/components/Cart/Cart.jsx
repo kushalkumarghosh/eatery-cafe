@@ -67,7 +67,7 @@ const Cart = () => {
         .substr(2, 9)}`;
 
       const sessionResponse = await axios.post(
-        "/stripe/create-checkout-session",
+        "/api/stripe/create-checkout-session",
         {
           items: orderItems,
           totalAmount: calculateTotal(),

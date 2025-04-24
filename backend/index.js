@@ -9,7 +9,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
     // origin: "http://localhost:3000",
-    origin: "https://eatery-cafe-chi.vercel.app/",
+    origin: "https://eatery-cafe-chi.vercel.app",
     credentials: true,
   })
 );

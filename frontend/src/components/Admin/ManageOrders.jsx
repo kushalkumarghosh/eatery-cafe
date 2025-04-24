@@ -9,7 +9,7 @@ const ManageOrders = () => {
   const fetchOrders = async () => {
     setLoading(true);
     try {
-      const res = await axios.get("/orders", {
+      const res = await axios.get("/api/orders", {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
       setOrders(res.data);
@@ -24,7 +24,7 @@ const ManageOrders = () => {
     if (!window.confirm("Are you sure you want to delete this order?")) return;
 
     try {
-      await axios.delete(`/orders/${id}`, {
+      await axios.delete(`/api/orders/${id}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
       setOrders((prev) => prev.filter((order) => order._id !== id));

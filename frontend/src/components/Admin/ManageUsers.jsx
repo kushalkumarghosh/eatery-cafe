@@ -7,7 +7,7 @@ const ManageUsers = () => {
 
   const fetchUsers = async () => {
     try {
-      const res = await axios.get("/auth", {
+      const res = await axios.get("/api/auth", {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
       setUsers(res.data);
@@ -29,7 +29,7 @@ const ManageUsers = () => {
     if (!confirm) return;
 
     try {
-      await axios.delete(`/auth/${id}`, {
+      await axios.delete(`/api/auth/${id}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
       setUsers(users.filter((u) => u._id !== id));

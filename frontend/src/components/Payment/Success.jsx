@@ -60,7 +60,7 @@ const Success = () => {
         const requestId = `req_${Date.now()}_${Math.random()
           .toString(36)
           .substr(2, 9)}`;
-        const response = await axios.post("/orders", {
+        const response = await axios.post("/api/orders", {
           items: orderData.items,
           totalAmount: orderData.totalAmount,
           address: orderData.address,

@@ -17,7 +17,7 @@ const Login = () => {
     setError("");
 
     try {
-      const response = await axios.post("/auth/login", { email, password });
+      const response = await axios.post("/api/auth/login", { email, password });
       login(response.data, response.data.token, response.data.role);
       toast.success("Login Successful!");
       if (response.data.role === "admin") {

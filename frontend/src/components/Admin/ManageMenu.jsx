@@ -13,7 +13,7 @@ const ManageMenu = () => {
 
   const fetchMenu = async () => {
     try {
-      const res = await axios.get("/menu");
+      const res = await axios.get("/api/menu");
       setMenu(res.data);
     } catch (err) {
       toast.error("Failed to fetch menu.");
@@ -35,7 +35,7 @@ const ManageMenu = () => {
     formData.append("image", newItem.imgUrl);
 
     try {
-      await axios.post("/menu", formData, {
+      await axios.post("/api/menu", formData, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
           "Content-Type": "multipart/form-data",
@@ -54,7 +54,7 @@ const ManageMenu = () => {
     if (!window.confirm("Are you sure you want to delete this item?")) return;
 
     try {
-      await axios.delete(`/menu/${id}`, {
+      await axios.delete(`/api/menu/${id}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
       toast.success("Menu item deleted!");

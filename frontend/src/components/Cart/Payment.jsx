@@ -37,7 +37,7 @@ const Payment = () => {
     };
 
     try {
-      await axios.post("/orders", order, {
+      await axios.post("/api/orders", order, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
       clearCart();

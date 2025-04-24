@@ -36,7 +36,7 @@ const Reservation = () => {
     }
 
     try {
-      await axios.post("/reservations", {
+      await axios.post("/api/reservations", {
         name,
         email,
         phone,

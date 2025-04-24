@@ -9,7 +9,7 @@ const ManageReservations = () => {
   const fetchReservations = async () => {
     setLoading(true);
     try {
-      const res = await axios.get("/reservations", {
+      const res = await axios.get("/api/reservations", {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
       setReservations(res.data);
@@ -26,7 +26,7 @@ const ManageReservations = () => {
     if (!confirmDelete) return;
 
     try {
-      await axios.delete(`/reservations/${id}`, {
+      await axios.delete(`/api/reservations/${id}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
       setReservations((prev) => prev.filter((r) => r._id !== id));
