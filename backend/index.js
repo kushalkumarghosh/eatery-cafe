@@ -3,6 +3,11 @@ const app = express();
 const cors = require("cors");
 require("dotenv").config();
 const mongoose = require("mongoose");
+const userRoutes = require("./routes/userRoutes");
+const menuRoutes = require("./routes/menuRoutes");
+const reservationRoutes = require("./routes/reservationRoutes");
+const orderRoutes = require("./routes/orderRoutes");
+const stripeRoutes = require("./routes/stripe");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -18,12 +23,6 @@ mongoose
   .connect(process.env.MONGODB_URI)
   .then(() => console.log("MongoDB database is connected successfully."))
   .catch((err) => console.error(err));
-
-const userRoutes = require("./routes/userRoutes");
-const menuRoutes = require("./routes/menuRoutes");
-const reservationRoutes = require("./routes/reservationRoutes");
-const orderRoutes = require("./routes/orderRoutes");
-const stripeRoutes = require("./routes/stripe");
 
 app.use("/api/auth", userRoutes);
 app.use("/api/menu", menuRoutes);
