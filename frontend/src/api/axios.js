@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "http://localhost:5000",
+  baseURL: import.meta.env.VITE_API_URL || "https://eatery-cafe.onrender.com",
   withCredentials: true,
 });
 instance.interceptors.request.use(
