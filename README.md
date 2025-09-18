@@ -2,8 +2,9 @@
 
 Eatery Cafe is a full-stack Restaurant Management System (RMS) built with the MERN stack (MongoDB, Express.js, React.js, Node.js). It features a user-facing frontend for browsing menus, making reservations, and placing orders, along with an admin dashboard for managing menu items, reservations, orders and users.
 
-### Homepage
-![Homepage] (screenshots/homepage.png)
+# Screenshots
+
+<img src = "screenshots/homepage.png" widht= "200px">
 
 ## Features
 
