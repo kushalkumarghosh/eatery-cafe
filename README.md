@@ -5,6 +5,17 @@ Eatery Cafe is a full-stack Restaurant Management System (RMS) built with the ME
 # Screenshots
 
 <img src = "screenshots/homepage.png" width= "200px">
+<img src = "screenshots/about.png" width= "200px">
+<img src = "screenshots/menu.png" width= "200px">
+<img src = "screenshots/reservation.png" width= "200px">
+<img src = "screenshots/cart.png" width= "200px">
+<img src = "screenshots/register.png" width= "200px">
+<img src = "screenshots/login.png" width= "200px">
+<img src = "screenshots/user_management.png" width= "200px">
+<img src = "screenshots/menu_management.png" width= "200px">
+<img src = "screenshots/reservation_management.png" width= "200px">
+<img src = "screenshots/reservation_status.png" width= "200px">
+<img src = "screenshots/order_management.png" width= "200px">
 
 ## Features
 
