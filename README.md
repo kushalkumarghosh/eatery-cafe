@@ -7,6 +7,8 @@ Eatery Cafe is a full-stack Restaurant Management System (RMS) built with the ME
 <table>
   <tr>
     <td><img src="screenshots/homepage.png" width="250px"></td>
+  </tr>
+  <tr>
     <td><img src="screenshots/about.png" width="250px"></td>
     <td><img src="screenshots/menu.png" width="250px"></td>
   </tr>
