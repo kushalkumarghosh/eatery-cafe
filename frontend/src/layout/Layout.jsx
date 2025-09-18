@@ -1,7 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import StickyNavbar from "../Home/StickyNavbar.jsx";
-import Footer from "../Home/Footer.jsx";
+import StickyNavbar from "../components/Home/StickyNavbar.jsx";
+import Footer from "../components/Home/Footer.jsx";
 
 const Layout = () => {
   return (

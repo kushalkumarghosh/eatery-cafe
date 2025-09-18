@@ -1,13 +1,15 @@
 # Eatery Cafe - Restaurant Management System
 
-Eatery Cafe is a full-stack Restaurant Management System (RMS) built with the MERN stack (MongoDB, Express.js, React.js, Node.js). It features a user-facing frontend for browsing menus, making reservations, and placing orders, along with an admin dashboard for managing menu items, reservations, and users.
+Eatery Cafe is a full-stack Restaurant Management System (RMS) built with the MERN stack (MongoDB, Express.js, React.js, Node.js). It features a user-facing frontend for browsing menus, making reservations, and placing orders, along with an admin dashboard for managing menu items, reservations, orders and users.
 
 ## Features
 
 ### ✅ Frontend (React)
-- Landing page with sections: Home, About, Menu, Reservation, Contact
+- Landing page with sections: Navigation bar, About, Menu, Offer, Reviews, Reservation, Contact, Footer
+- Pages: About, Menu, Reservation.
 - Authentication (User/Admin)
-- User dashboard for reservations and orders
+- Forget/Reset Password.
+- User dashboard for reservations and orders.
 - Shopping cart and Stripe payment integration
 
 ### ✅ Backend (Node.js + Express)
@@ -19,12 +21,14 @@ Eatery Cafe is a full-stack Restaurant Management System (RMS) built with the ME
   - Menu Management
   - Orders
   - Reservations
+  - Notification
 
 ### ✅ Admin Dashboard
 - Login for Admin users
 - View all users (admins cannot be deleted)
 - Add/delete food items (reflected on frontend)
-- View/delete reservation requests
+- Changes Status, View/delete reservation requests
+- View/delete orders
 
 ---
 
@@ -50,6 +54,12 @@ JWT_SECRET=your_jwt_secret
 CLOUDINARY_CLOUD_NAME=your_cloudinary_name
 CLOUDINARY_API_KEY=your_api_key
 CLOUDINARY_API_SECRET=your_api_secret
+JWT_SECRET=your_jwt_secret
+STRIPE_SECRET_KEY=your_stripe_secret_key
+SMTP_HOST=your_smtp_host_email
+SMTP_PORT=your_smtp_port
+SMTP_USER=your_smtp_user_email
+SMTP_PASS=your_smtp_user_pass
 ```
 
 Start the backend server:
@@ -88,17 +98,22 @@ npm run dev
 - mongoose
 - jsonwebtoken
 - cloudinary
+- multer
 - stripe
 - bcrypt 
 - cors
 - dotenv
 - nodemon
+- socket.io
+- nodemailer
+- express-rate-limit
 
 ### Frontend:
 - react
 - react-router-dom
 - axios 
 - react-hook-form
+- react-hot-toast
 - react-slick
 - @stripe/stripe-js
 - @material-tailwind/react
@@ -107,6 +122,8 @@ npm run dev
 - vite
 - tailwindcss
 - eslint
+- axios-socket.io-client
+
 
 ---
 

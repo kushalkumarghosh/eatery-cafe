@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { useCart } from "../Context/CartContext.jsx";
-import { useAuth } from "../Context/AuthContext.jsx";
+import { useCart } from "../../hooks/useCart.jsx";
+import { useAuth } from "../../hooks/useAuth.jsx";
 import axios from "../../api/axios.js";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";

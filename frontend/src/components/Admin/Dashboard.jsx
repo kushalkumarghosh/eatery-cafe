@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import { useState, useContext } from "react";
 import {
   Tabs,
   TabsHeader,
@@ -8,7 +8,7 @@ import {
   Typography,
   Button,
 } from "@material-tailwind/react";
-import { AuthContext } from "../Context/AuthContext.jsx";
+import { AuthContext } from "../../context/AuthContext.jsx";
 import ManageUsers from "./ManageUsers.jsx";
 import ManageMenu from "./ManageMenu.jsx";
 import ManageReservations from "./ManageReservations.jsx";

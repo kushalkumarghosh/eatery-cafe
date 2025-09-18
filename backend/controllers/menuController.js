@@ -22,13 +22,22 @@ const uploadImageToCloudinary = async (filePath) => {
 
 const createMenuItem = async (req, res) => {
   try {
-    const { name, description, price } = req.body;
+    const { name, description, price, category } = req.body;
     if (!req.file) {
       return res.status(400).send({ msg: "Image is required" });
     }
+    if (!category) {
+      return res.status(400).send({ msg: "Category is required" });
+    }
 
     const imgUrl = await uploadImageToCloudinary(req.file.path);
-    const menu = await Menu.create({ name, description, price, imgUrl });
+    const menu = await Menu.create({
+      name,
+      description,
+      price,
+      imgUrl,
+      category: category.toLowerCase(),
+    });
     res.status(201).json(menu);
   } catch (err) {
     console.error("Error creating menu item:", err);
@@ -48,7 +57,7 @@ const getMenuItems = async (req, res) => {
 
 const updateMenuItem = async (req, res) => {
   try {
-    const { name, description, price } = req.body;
+    const { name, description, price, category } = req.body;
     const menu = await Menu.findById(req.params.id);
 
     if (!menu) return res.status(404).send({ msg: "Menu item not found" });
@@ -56,6 +65,7 @@ const updateMenuItem = async (req, res) => {
     menu.name = name || menu.name;
     menu.description = description || menu.description;
     menu.price = price || menu.price;
+    if (category) menu.category = category.toLowerCase();
 
     if (req.file) {
       const imageUrl = await uploadImageToCloudinary(req.file.path);

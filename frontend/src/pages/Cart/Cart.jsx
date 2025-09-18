@@ -1,15 +1,13 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Typography, Button, Input } from "@material-tailwind/react";
 import axios from "../../api/axios.js";
 import toast from "react-hot-toast";
-import { useCart } from "../Context/CartContext.jsx";
-import { AuthContext } from "../Context/AuthContext.jsx";
+import { useCart } from "../../hooks/useCart.jsx";
+import { AuthContext } from "../../context/AuthContext.jsx";
 import { loadStripe } from "@stripe/stripe-js";
 
-const stripePromise = loadStripe(
-  "pk_test_51R7AvXRkr1gpmxJlLpoQaE9Vcd7oJdnrsJsoVfNLXwTomMrRcYVyDJ1SPvLQmjcCiGCxCIxFQlzZzeeE3C6PJy3600R2HyGvGo"
-);
+const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_TEST_KEY); 
 
 const Cart = () => {
   const { cart, removeFromCart } = useCart();
@@ -64,7 +62,7 @@ const Cart = () => {
 
       const clientReferenceId = `order_${Date.now()}_${Math.random()
         .toString(36)
-        .substr(2, 9)}`;
+        .slice(2, 9)}`;
 
       const sessionResponse = await axios.post(
         "/api/stripe/create-checkout-session",

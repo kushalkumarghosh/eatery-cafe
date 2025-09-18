@@ -14,6 +14,14 @@ const protect = async (req, res, next) => {
       if (!req.user) {
         return res.status(401).send({ msg: "User not found" });
       }
+
+      // Check if the token matches the user's activeToken (for single-session)
+      if (req.user.activeToken !== token) {
+        return res
+          .status(401)
+          .send({ msg: "Session expired. Please log in again." });
+      }
+
       next();
     } catch (err) {
       console.error(err);
@@ -34,4 +42,4 @@ const admin = (req, res, next) => {
   }
 };
 
-module.exports = { protect, admin };
+module.exports = { protect, admin };   

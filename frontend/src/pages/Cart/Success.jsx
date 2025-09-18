@@ -1,9 +1,9 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Typography, Button } from "@material-tailwind/react";
 import { useNavigate, useLocation } from "react-router-dom";
 import toast from "react-hot-toast";
 import axios from "../../api/axios.js";
-import { useCart } from "../Context/CartContext.jsx";
+import { useCart } from "../../hooks/useCart.jsx";
 
 const Success = () => {
   const navigate = useNavigate();
